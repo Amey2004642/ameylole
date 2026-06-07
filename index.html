@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Amey Lole | Founder & Director, TecWithAmey | Premium Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #0a0c10;
+      color: #eef5ff;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Animated gradient background */
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #0a0f1a, #030507);
+    }
+
+    .gradient-bg::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(44, 125, 160, 0.15) 0%, transparent 70%);
+      animation: aurora 15s infinite alternate;
+    }
+
+    @keyframes aurora {
+      0% { transform: translate(-10%, -10%) rotate(0deg); opacity: 0.3; }
+      100% { transform: translate(10%, 10%) rotate(5deg); opacity: 0.6; }
+    }
+
+    /* glass morphism */
+    .glass {
+      background: rgba(18, 25, 35, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(44, 125, 160, 0.25);
+      border-radius: 32px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* header premium */
+    header {
+      position: sticky;
+      top: 20px;
+      z-index: 1000;
+      margin: 20px 40px 0;
+      border-radius: 80px;
+      background: rgba(10, 15, 25, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(44, 125, 160, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 40px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, #2c7da0, #5bc0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #c1d9f0;
+      font-weight: 500;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #2c7da0, #5bc0ff);
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* hero */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(44,125,160,0.2), rgba(91,192,255,0.1));
+      padding: 8px 24px;
+      border-radius: 40px;
+      border: 1px solid rgba(44,125,160,0.5);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      backdrop-filter: blur(5px);
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff, #5bc0ff, #2c7da0);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      font-size: 1.4rem;
+      color: #9bb8da;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      max-width: 550px;
+      color: #b8cef0;
+      margin-bottom: 30px;
+    }
+
+    .stats-grid {
+      display: flex;
+      gap: 40px;
+      margin: 35px 0;
+    }
+
+    .stat-item {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fff, #5bc0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1e5a77, #0e3a4f);
+      border: none;
+      padding: 14px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 20px rgba(44,125,160,0.3);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(44,125,160,0.5);
+    }
+
+    .btn-outline-premium {
+      background: transparent;
+      border: 1.5px solid rgba(44,125,160,0.8);
+      padding: 14px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #5bc0ff;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-outline-premium:hover {
+      background: rgba(44,125,160,0.2);
+      border-color: #5bc0ff;
+    }
+
+    .hero-avatar {
+      flex: 0.8;
+      text-align: center;
+      position: relative;
+    }
+
+    .floating-shape {
+      width: 340px;
+      height: 340px;
+      background: linear-gradient(135deg, rgba(44,125,160,0.2), rgba(91,192,255,0.08));
+      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+      animation: morphing 8s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(44,125,160,0.5);
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .floating-shape img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform 0.4s ease;
+    }
+
+    .floating-shape img:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes morphing {
+      0% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; transform: translateY(0px); }
+      50% { border-radius: 42% 58% 41% 59% / 49% 45% 55% 51%; transform: translateY(-12px); }
+      100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; transform: translateY(0px); }
+    }
+
+    /* Premium Cards */
+    .section-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #fff, #5bc0ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-sub {
+      color: #9bb8da;
+      margin-bottom: 60px;
+      font-size: 1.2rem;
+    }
+
+    .card-premium {
+      background: rgba(18, 28, 40, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(44,125,160,0.3);
+      border-radius: 28px;
+      padding: 32px;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      height: 100%;
+    }
+
+    .card-premium:hover {
+      transform: translateY(-12px);
+      border-color: rgba(91,192,255,0.6);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      background: rgba(25, 38, 55, 0.7);
+    }
+
+    .card-icon-lg {
+      font-size: 2.8rem;
+      color: #5bc0ff;
+      margin-bottom: 20px;
+    }
+
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .skill-pill {
+      background: rgba(44,125,160,0.2);
+      border: 1px solid rgba(44,125,160,0.4);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    /* quote block */
+    .quote-block {
+      background: linear-gradient(135deg, rgba(44,125,160,0.15), rgba(10,20,35,0.6));
+      border-left: 4px solid #5bc0ff;
+      border-radius: 28px;
+      padding: 48px;
+      margin: 60px 0;
+      backdrop-filter: blur(8px);
+    }
+
+    /* connect section */
+    .social-links-premium {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .social-icon-circle {
+      width: 70px;
+      height: 70px;
+      background: rgba(44,125,160,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      border: 1px solid rgba(44,125,160,0.4);
+      font-size: 2rem;
+      color: #5bc0ff;
+      text-decoration: none;
+    }
+
+    .social-icon-circle:hover {
+      transform: scale(1.1) translateY(-5px);
+      background: rgba(44,125,160,0.4);
+      border-color: #5bc0ff;
+      box-shadow: 0 0 20px rgba(91,192,255,0.4);
+    }
+
+    footer {
+      border-top: 1px solid rgba(44,125,160,0.2);
+      padding: 50px 0;
+      text-align: center;
+      background: rgba(5, 10, 18, 0.8);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      h1 { font-size: 3rem; }
+      .hero { flex-direction: column-reverse; text-align: center; }
+      .stats-grid { justify-content: center; }
+      .btn-group { justify-content: center; }
+      header { margin: 15px 20px; }
+      .floating-shape { width: 260px; height: 260px; }
+    }
+
+    /* custom cursor */
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background: #5bc0ff;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 10000;
+      transition: 0.05s;
+    }
+  </style>
+</head>
+<body>
+<div class="gradient-bg"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<header data-aos="fade-down">
+  <div class="nav-bar">
+    <div class="logo">AMEY LOLE</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#offerings">Offerings</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+          <div class="hero-badge">
+            <i class="fas fa-crown"></i> Founder & Director
+          </div>
+          <h1>Amey Lole</h1>
+          <div class="hero-sub">Founder of TecWithAmey | Software Developer | Technology Educator | Mentor</div>
+          <p class="hero-desc">Building the Future Through Technology, Learning, and Innovation. Empowering the next generation of tech leaders.</p>
+          <div class="stats-grid">
+            <div class="stat-item"><span class="stat-number">800+</span><br>Students Mentored</div>
+            <div class="stat-item"><span class="stat-number">45+</span><br>Tech Projects</div>
+            <div class="stat-item"><span class="stat-number">100%</span><br>Practical Focus</div>
+          </div>
+          <div class="btn-group">
+            <a href="#connect" class="btn-primary"><i class="fas fa-paper-plane"></i> Let's Connect</a>
+            <a href="https://tecwithamey.onrender.com" target="_blank" class="btn-outline-premium"><i class="fas fa-globe"></i> Explore TecWithAmey</a>
+          </div>
+        </div>
+        <div class="hero-avatar" data-aos="fade-left" data-aos-duration="1000">
+          <div class="floating-shape">
+            <img src="founder.png" alt="Amey Lole - Founder & Director of TecWithAmey">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / intro premium -->
+  <section id="about">
+    <div class="container">
+      <div data-aos="fade-up">
+        <span class="hero-badge" style="margin-bottom: 10px;">My Story</span>
+        <h2 class="section-title">Hello and welcome!</h2>
+        <p style="font-size: 1.2rem; max-width: 850px; color: #cbe3ff;">I am <strong class="glow">Amey Lole</strong>, the founder of <strong>TecWithAmey</strong> — an independent platform dedicated to helping students, interns, and enthusiasts master real-world tech skills.</p>
+      </div>
+      <div class="grid-3" style="margin-top: 50px;">
+        <div class="card-premium" data-aos="flip-left"><i class="fas fa-rocket card-icon-lg"></i><h3>My Journey</h3><p>From a passion for software to developing apps, mentoring students, and building a community that bridges the gap between theory and industry.</p></div>
+        <div class="card-premium" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-brain card-icon-lg"></i><h3>Mission</h3><p>Making technology education accessible, practical, and industry-oriented. Learn. Build. Grow.</p></div>
+        <div class="card-premium" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-chalkboard-user card-icon-lg"></i><h3>TecWithAmey</h3><p>AI, Python, Web Dev, Career Guidance, Internships & community-driven learning.</p><a href="https://tecwithamey.onrender.com" style="color:#5bc0ff;">Visit Platform →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional background & Skills -->
+  <section id="expertise">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-sub">Languages, frameworks & domains I specialize in</p>
+      </div>
+      <div class="grid-3">
+        <div class="card-premium" data-aos="zoom-in"><i class="fas fa-terminal card-icon-lg"></i><h3>Programming Languages</h3><div class="skill-cloud"><span class="skill-pill">Python</span><span class="skill-pill">Java</span><span class="skill-pill">SQL</span><span class="skill-pill">JavaScript</span></div></div>
+        <div class="card-premium" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-layer-group card-icon-lg"></i><h3>Frameworks & DB</h3><div class="skill-cloud"><span class="skill-pill">Flask</span><span class="skill-pill">REST APIs</span><span class="skill-pill">MongoDB/Atlas</span><span class="skill-pill">MySQL</span><span class="skill-pill">Git/GitHub</span></div></div>
+        <div class="card-premium" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-microchip card-icon-lg"></i><h3>Emerging Tech</h3><div class="skill-cloud"><span class="skill-pill">AI/ML</span><span class="skill-pill">Cloud Computing</span><span class="skill-pill">EdTech</span><span class="skill-pill">Data Analytics</span><span class="skill-pill">Startup Ecosystem</span></div></div>
+      </div>
+      <div class="quote-block" data-aos="fade-up">
+        <i class="fas fa-quote-left" style="font-size: 2rem; color: #5bc0ff; opacity: 0.6;"></i>
+        <p style="font-size: 1.3rem; font-weight: 500; margin: 20px 0;">"While interacting with students, I noticed theoretical knowledge without practical exposure is a real challenge. TecWithAmey was created to bridge that gap and make learners industry-ready."</p>
+        <p>— Amey Lole</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer + Vision + Core Values -->
+  <section id="offerings">
+    <div class="container">
+      <div data-aos="fade-up">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-sub">Empowering the tech community with premium resources</p>
+      </div>
+      <div class="grid-3">
+        <div class="card-premium" data-aos="fade-right"><i class="fab fa-blogger card-icon-lg"></i><h3>Technology Blogs</h3><p>In-depth articles on AI, Software Dev, Career Growth, Programming Tutorials & Industry Updates.</p><a href="http://tecwithamey.blogspot.com" target="_blank" style="color:#5bc0ff;">Read Blogs →</a></div>
+        <div class="card-premium" data-aos="fade-up"><i class="fas fa-bullhorn card-icon-lg"></i><h3>Career Guidance</h3><p>Resume building, interview preparation, skill roadmaps & industry awareness programs.</p></div>
+        <div class="card-premium" data-aos="fade-left"><i class="fas fa-laptop-code card-icon-lg"></i><h3>Internship Support</h3><p>Practical exposure through internship programs & project-based learning initiatives.</p></div>
+        <div class="card-premium" data-aos="fade-right"><i class="fas fa-users card-icon-lg"></i><h3>Technology Community</h3><p>Connect with learners, developers, and professionals passionate about continuous growth.</p></div>
+        <div class="card-premium" data-aos="fade-up"><i class="fas fa-eye card-icon-lg"></i><h3>Vision</h3><p>India's most trusted tech learning community — empowering through practical education & mentorship.</p></div>
+        <div class="card-premium" data-aos="fade-left"><i class="fas fa-heart card-icon-lg"></i><h3>Core Values</h3><p>⚡ Continuous Learning • 🛠️ Practical Knowledge • 🌱 Community Growth • 💡 Innovation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connect Section Premium -->
+  <section id="connect">
+    <div class="container">
+      <div data-aos="zoom-in">
+        <h2 class="section-title" style="text-align: center;">Connect With Amey Lole</h2>
+        <p class="section-sub" style="text-align: center;">Let's collaborate, innovate and build the future together.</p>
+      </div>
+      <div class="social-links-premium" data-aos="fade-up">
+        <a href="https://tecwithamey.onrender.com" target="_blank" class="social-icon-circle"><i class="fas fa-globe"></i></a>
+        <a href="https://www.instagram.com/tech_with_amey/" target="_blank" class="social-icon-circle"><i class="fab fa-instagram"></i></a>
+        <a href="http://tecwithamey.blogspot.com" target="_blank" class="social-icon-circle"><i class="fab fa-blogger"></i></a>
+        <a href="https://www.facebook.com/people/Amey-Lole/100080639667407/" target="_blank" class="social-icon-circle"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <div class="quote-block" data-aos="fade-up" style="text-align: center;">
+        <i class="fas fa-quote-right" style="font-size: 2rem;"></i>
+        <p style="font-size: 1.5rem; font-weight: 600;">"Technology is not just about writing code. It is about solving problems, creating opportunities, and helping people grow."</p>
+        <p style="margin-top: 15px;">— Amey Lole, Founder, TecWithAmey</p>
+      </div>
+      <!-- Keywords -->
+      <div class="skill-cloud" style="justify-content: center; gap: 15px; margin-top: 40px;">
+        <span class="skill-pill">Amey Lole</span><span class="skill-pill">TecWithAmey</span><span class="skill-pill">Software Developer</span><span class="skill-pill">Python Developer</span><span class="skill-pill">Technology Educator</span><span class="skill-pill">Tech Mentor</span><span class="skill-pill">Artificial Intelligence</span><span class="skill-pill">Student Mentor</span><span class="skill-pill">Career Guidance</span><span class="skill-pill">Internship Opportunities</span><span class="skill-pill">Technology Community India</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Amey Lole — Founder & Director, TecWithAmey | Learn. Build. Grow.</p>
+    <p style="margin-top: 10px; opacity: 0.7;"><i class="fas fa-code"></i> Building the future through technology, learning, and innovation.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+  
+  // Custom cursor
+  const cursor = document.getElementById('cursorDot');
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 4 + 'px';
+    cursor.style.top = e.clientY - 4 + 'px';
+  });
+  
+  // smooth scroll all
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
